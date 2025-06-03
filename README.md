@@ -1,99 +1,88 @@
-# 📚 Literalura
+# Literalura
 
-**Literalura** is a console-based Java application that allows users to search for books using the [Gutendex API](https://gutendex.com/), persist the retrieved data into a PostgreSQL database, and perform various queries on the saved data.
+Literalura is a Java Spring Boot console-based application for managing literary data, using PostgreSQL as the database and environment configuration with Dotenv.
 
-This project was developed as part of the **Java Back-End** track of the [Oracle Next Education](https://www.oracle.com/br/education/oracle-next-education/) program in partnership with [Alura](https://www.alura.com.br/).
+## Features
 
----
+- Fetch and persist book data
+- Manage authors and book information
+- Console-based interactive menu
+- PostgreSQL integration
+- Spring Data JPA support
+- External API configuration using Dotenv
 
-## 🚀 Features
+## Project Structure
 
-- 🔍 Search books from the Gutendex API
-- 💾 Persist books and authors using Spring Data JPA
-- 📖 List all saved books
-- 🌎 Query authors by nationality
-- 📆 Search books by publication year
-- 🧭 Interactive text-based menu
+```
+literalura
+├── src
+│   └── main
+│       ├── java
+│       │   └── developer.ezandro.literalura
+│       │       ├── config
+│       │       │   └── HttpClientConfig.java
+│       │       ├── domain
+│       │       │   ├── model
+│       │       │   │   ├── Author.java
+│       │       │   │   └── Book.java
+│       │       │   ├── dtos
+│       │       │   │   ├── ApiResponseDTO.java
+│       │       │   │   ├── AuthorDTO.java
+│       │       │   │   └── BookDTO.java
+│       │       │   └── repository
+│       │       │       ├── AuthorRepository.java
+│       │       │       └── BookRepository.java
+│       │       ├── exceptions
+│       │       │   ├── BookNotFoundException.java
+│       │       │   └── DataDeserializationException.java
+│       │       ├── services
+│       │       │   ├── mapper
+│       │       │   │   └── DTOMapper.java
+│       │       │   ├── AuthorService.java
+│       │       │   ├── BookService.java
+│       │       │   ├── ILiterAluraDataDeserializer.java
+│       │       │   ├── LiterAluraApiClient.java
+│       │       │   └── LiterAluraDataDeserializer.java
+│       │       ├── ui
+│       │       │   └── ConsoleMenu.java
+│       │       └── LiteraluraApplication.java
+│       └── resources
+│           ├── application.properties
+│           └── .env
+├── pom.xml
+└── README.md
+```
 
----
-
-## 🛠 Technologies Used
+## Technologies Used
 
 - Java 24
 - Spring Boot 3.5.0
 - Spring Data JPA
 - PostgreSQL
-- Dotenv Java (`dotenv-java`)
-- Jackson Databind
+- Jackson
+- Dotenv (dotenv-java)
 - Maven
 
----
+## Configuration
 
-## 📁 Project Structure
-
-```
-literalura/
-├── src/main/java/developer/ezandro/literalura/
-│   ├── ui/                # Console menu and user input
-│   ├── domain/            # JPA entities (Book, Author)
-│   ├── repositories/      # JPA repositories
-│   └── LiteraluraApplication.java
-├── resources/
-│   ├── application.properties
-│   └── .env               # Environment variables
-├── pom.xml
-```
-
----
-
-## ⚙️ Setup
-
-### 1. Prerequisites
-
-- Java 21+ (Java 24 recommended)
-- PostgreSQL
-- Maven
-
-### 2. Database Setup
-
-Create a database named `literalura`:
-
-```sql
-CREATE DATABASE literalura;
-```
-
-### 3. Environment Variables
-
-Create a `.env` file in the project root with the following content:
+Create a `.env` file in `src/main/resources/` with the following variables:
 
 ```env
-DB_URL=jdbc:postgresql://localhost/literalura
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
+DB_URL=jdbc:postgresql://localhost:5432/literalura
+DB_USERNAME=your_db_username
+DB_PASSWORD=your_db_password
 ```
 
-> ⚠️ Do not commit your `.env` file to version control.
+## How to Run
 
----
-
-## ▶️ Running the Project
-
-Use the following command to run the application:
+1. Ensure PostgreSQL is running and the database is created.
+2. Configure your `.env` file.
+3. Run the application:
 
 ```bash
-mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
-The system will start and display the interactive console menu.
+## Author
 
----
-
-## 🤝 Contribution
-
-This project was built for educational purposes and is part of the **Java Back-End** specialization track from **ONE | Oracle Next Education** in collaboration with **Alura**.
-
----
-
-## 📄 Author
-
-Developed by Ezandro Bueno
+Developed by Ezandro — Part of Oracle Next Education (ONE) + Alura Back-End Java program.

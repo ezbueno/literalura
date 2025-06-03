@@ -68,8 +68,8 @@ Create a `.env` file in the project root with the following content:
 
 ```env
 DB_URL=jdbc:postgresql://localhost/literalura
-DB_USERNAME=postgres
-DB_PASSWORD=postgres
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
 ```
 
 > ⚠️ Do not commit your `.env` file to version control.
@@ -94,6 +94,6 @@ This project was built for educational purposes and is part of the **Java Back-E
 
 ---
 
-## 📄 License
+## 📄 Author
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+Developed by Ezandro Bueno

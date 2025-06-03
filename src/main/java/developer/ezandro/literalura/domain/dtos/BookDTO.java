@@ -1,4 +1,4 @@
-package developer.ezandro.literalura.domain.dto;
+package developer.ezandro.literalura.domain.dtos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.lang.NonNull;

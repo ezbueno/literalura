@@ -1,4 +1,4 @@
-package developer.ezandro.literalura.domain.dto;
+package developer.ezandro.literalura.domain.dtos;
 
 import java.util.List;
 import java.util.stream.Collectors;

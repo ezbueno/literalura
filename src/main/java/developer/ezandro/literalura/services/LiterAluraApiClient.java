@@ -21,27 +21,27 @@ public class LiterAluraApiClient {
 
     public String getData(String title) throws IOException {
         String formattedTitle = URLEncoder.encode(title, StandardCharsets.UTF_8);
-        try (HttpClient client = HttpClient.newBuilder()
-                .followRedirects(HttpClient.Redirect.NORMAL)
-                .build()) {
 
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(BASE_URL+ formattedTitle))
-                    .GET()
-                    .build();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(BASE_URL + formattedTitle))
+                .GET()
+                .build();
 
-            try {
-                HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        try {
+            HttpResponse<String> response = this.client.send(request, HttpResponse.BodyHandlers.ofString());
 
-                if (response.statusCode() >= 400) {
-                    throw new IOException("HTTP error " + response.statusCode() + " for " + title);
-                }
-
-                return response.body();
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                throw new IOException("Request to " + title + " was interrupted", e);
+            if (response.body() == null || response.body().isBlank()) {
+                throw new IOException("API returned empty JSON for title: " + title);
             }
+
+            if (response.statusCode() >= 400) {
+                throw new IOException("HTTP error " + response.statusCode() + " for " + title);
+            }
+
+            return response.body();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new IOException("Request to " + title + " was interrupted", e);
         }
     }
 }

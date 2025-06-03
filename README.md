@@ -1,10 +1,10 @@
 # Literalura
 
-Literalura is a Java Spring Boot console-based application for managing literary data, using PostgreSQL as the database and environment configuration with Dotenv.
+Literalura is a Java Spring Boot console-based application for managing literary data, using PostgreSQL as the database and environment configuration with Dotenv. It fetches book and author data from the [Gutendex API](https://gutendex.com/) and allows users to interact with and manage this information through a console-based menu.
 
 ## Features
 
-- Fetch and persist book data
+- Fetch and persist book data from the Gutendex API
 - Manage authors and book information
 - Console-based interactive menu
 - PostgreSQL integration

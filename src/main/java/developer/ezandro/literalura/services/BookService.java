@@ -2,8 +2,8 @@ package developer.ezandro.literalura.services;
 
 import developer.ezandro.literalura.domain.Author;
 import developer.ezandro.literalura.domain.Book;
-import developer.ezandro.literalura.domain.dto.AuthorDTO;
-import developer.ezandro.literalura.domain.dto.BookDTO;
+import developer.ezandro.literalura.domain.dtos.AuthorDTO;
+import developer.ezandro.literalura.domain.dtos.BookDTO;
 import developer.ezandro.literalura.exceptions.BookNotFoundException;
 import developer.ezandro.literalura.repositories.AuthorRepository;
 import developer.ezandro.literalura.repositories.BookRepository;

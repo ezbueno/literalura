@@ -1,7 +1,7 @@
 package developer.ezandro.literalura.services;
 
 import developer.ezandro.literalura.domain.Author;
-import developer.ezandro.literalura.domain.dto.AuthorDTO;
+import developer.ezandro.literalura.domain.dtos.AuthorDTO;
 import developer.ezandro.literalura.repositories.AuthorRepository;
 import developer.ezandro.literalura.services.mapper.DTOMapper;
 import org.springframework.stereotype.Service;

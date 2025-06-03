@@ -1,9 +1,9 @@
 package developer.ezandro.literalura.ui;
 
 import developer.ezandro.literalura.domain.Book;
-import developer.ezandro.literalura.domain.dto.ApiResponseDTO;
-import developer.ezandro.literalura.domain.dto.AuthorDTO;
-import developer.ezandro.literalura.domain.dto.BookDTO;
+import developer.ezandro.literalura.domain.dtos.ApiResponseDTO;
+import developer.ezandro.literalura.domain.dtos.AuthorDTO;
+import developer.ezandro.literalura.domain.dtos.BookDTO;
 import developer.ezandro.literalura.exceptions.BookNotFoundException;
 import developer.ezandro.literalura.services.AuthorService;
 import developer.ezandro.literalura.services.BookService;

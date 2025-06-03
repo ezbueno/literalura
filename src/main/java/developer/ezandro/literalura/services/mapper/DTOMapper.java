@@ -2,8 +2,8 @@ package developer.ezandro.literalura.services.mapper;
 
 import developer.ezandro.literalura.domain.Author;
 import developer.ezandro.literalura.domain.Book;
-import developer.ezandro.literalura.domain.dto.AuthorDTO;
-import developer.ezandro.literalura.domain.dto.BookDTO;
+import developer.ezandro.literalura.domain.dtos.AuthorDTO;
+import developer.ezandro.literalura.domain.dtos.BookDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
